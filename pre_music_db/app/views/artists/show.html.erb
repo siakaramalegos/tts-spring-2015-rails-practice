@@ -2,12 +2,17 @@
 
 <p>
   <strong>Genre:</strong>
-  <%= @artist.genre %>
+  <%= @artist.genre.name %>
 </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
+  <strong>Songs by <%= @artist.name.capitalize %>:</strong>
+
+  <ul>
+    <% @artist.songs.each do |song| %>
+    <li><%= song.name %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |

@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @genre.name %>
+  <strong>Artists in <%= @genre.name.capitalize %> music:</strong>
+
+  <ul>
+    <% @genre.artists.each do |artist| %>
+    <li><%= artist.name %></li>
+    <% end %>
+  </ul>
+
 </p>
 
 <%= link_to 'Edit', edit_genre_path(@genre) %> |
