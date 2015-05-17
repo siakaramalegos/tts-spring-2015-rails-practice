@@ -41,6 +41,9 @@ gem 'starter_generators'
 # Enable prettier rails console printing
 gem 'awesome_print'
 
+# Annotate our models with our schema
+gem 'annotate', '~> 2.6.6'
+
 group :development do
   # Quiet those assets down!
   gem 'quiet_assets'
