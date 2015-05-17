@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @artists.each do |artist| %>
+    <% @artists.order('name').each do |artist| %>
       <tr>
         <td><%= artist.genre.name %></td>
         <td><%= artist.name %></td>

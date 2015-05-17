@@ -4,7 +4,7 @@
   <strong>Artists in <%= @genre.name.capitalize %> music:</strong>
 
   <ul>
-    <% @genre.artists.each do |artist| %>
+    <% @genre.artists.order('name').each do |artist| %>
     <li><%= artist.name %></li>
     <% end %>
   </ul>
