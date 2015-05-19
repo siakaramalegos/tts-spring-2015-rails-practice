@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Fido" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :breed %><br>
-    <%= f.text_field :breed %>
+    <%= f.text_field :breed, class: "form-control", placeholder: "pit bull" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :age %><br>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, class: "form-control", placeholder: "2" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :owner_id %><br>
-    <%= f.collection_select :owner_id, Owner.all, :id, :name %>
+    <%= f.collection_select :owner_id, Owner.all, :id, :name, { prompt: "Select an owner" }, { class: "form-control"} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success" %>
   </div>
 <% end %>
