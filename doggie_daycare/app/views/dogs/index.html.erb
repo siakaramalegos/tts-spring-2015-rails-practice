@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @dogs.each do |dog| %>
+    <% @dogs.order('name').each do |dog| %>
       <tr>
         <td><%= dog.id %></td>
         <td><%= dog.name %></td>

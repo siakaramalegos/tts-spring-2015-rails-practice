@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @owner.name %>
+  <strong><%= @owner.name.capitalize %>'s fur babies:</strong>
+  <ul>
+    <% @owner.dogs.order('name').each do |dog| %>
+      <li><%= dog.name %></li>
+    <% end %>
+  </ul>
 </p>
 
 <p>
