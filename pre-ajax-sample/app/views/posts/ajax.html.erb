@@ -1,0 +1,23 @@
+<h1>Ajax Testing 1, 2, 3</h1>
+
+<!-- This div element will be replaced by actual posts.  First, we just put a link to the JavaScript function that will do that behavior. -->
+<div id="posts">
+  <a href="javascript:loadPosts();">This is where blog posts go</a>
+</div>
+
+<!-- Here is the JavaScript function that actually loads posts once it's initiated by clicking the hyperlink above. -->
+<script type="text/javascript">
+  function loadPosts(){
+    // Go grab the JSON data which contains our posts.  Rails creates the JSON version of our data for us.
+    $.getJSON("/posts.json", function(data){
+      var html = "";
+      $.each(data, function (index){
+  // alert(data[index].content);
+  html += "<b><i>" + data[index].content + "</i></b><br>";
+  });
+  // update our div
+    $("#posts").html(html);
+  });
+       }
+</script>
+
