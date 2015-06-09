@@ -37,6 +37,8 @@ gem 'starter_generators'
 
 group :development do
   gem 'quiet_assets'
+  gem 'faker'
+  gem 'populator'
 end
 
 group :development, :test do
